@@ -46,7 +46,7 @@ const Login = () => {
 </form>
 </div>
 </div>
-<div className="right lg:w-[50%] w-[100%] h-screen bg-red-500">
+<div className="right lg:w-[50%] w-[100%] hidden lg:block h-screen bg-red-500">
     <img className='w-full h-full' src={pic}></img>
 
 </div>
