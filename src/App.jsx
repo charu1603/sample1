@@ -1,29 +1,24 @@
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import { AuthProvider } from "./context/AuthContext";
-import Landingpage from "./pages/Landingpage";
-import Login from "./pages/Login";
-import { PrivateRoute } from "./Routes/PrivateRoute";
-import Favourites from './components/Favourites';
-import Modal from './components/Modal';
+import React from 'react';
+import Login from '../src/components/Login'
+import Dashboard from '../src/components/Dashboard';
+import Navbar from '../src/components/Navbar'
+import { BrowserRouter as Router,Routes, Route, BrowserRouter} from "react-router-dom";
+import './index.css';
+
 function App() {
   return (
-    <AuthProvider>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route
-          path="/Landingpage"
-          element={
-            <PrivateRoute>
-              <Landingpage />
-            </PrivateRoute>
-          }
-        />
-    <Route path="/search/photos/:id" element={<Modal />} />
-        <Route path="/" element={<PrivateRoute><Favourites /></PrivateRoute>} />
-      </Routes>
-    </AuthProvider>
+  
+   
+        
+      <><Navbar /><Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/Dashboard" element={<Dashboard />} />
+
+
+    </Routes></>
+ 
+  
+   
   );
 }
 

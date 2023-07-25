@@ -1,25 +1,17 @@
-import { UserAuth } from "../context/AuthContext"
-import {Link} from "react-router-dom";
+import React from 'react'
+import Dashboard from './Dashboard';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { currentUser, logout } = UserAuth();
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch(error) {
-      console.log(error)
-    }
-  }
-
   return (
-    <div className="navbar fixed z-10 backdrop-blur-xl bg-white/30 shadow-md">
-      <div className="containerWrap flex justify-between">
-        <a className="btn btn-ghost normal-case text-white text-xl">Homepage</a>
-        <Link to="/Favourites" className="btn btn-ghost normal-case text-white text-xl">My Favourite Images</Link>
-        {currentUser ? <button className="text-white text-bold" onClick={handleLogout}>Logout</button> : ""}
-      </div>
-    </div>
+    <nav className='bg-white flex justify-between p-2 '>
+    <h1>Assignment . </h1>
+    <main className='mr-2'>
+    <Link to='/' className='mr-2'>Login</Link>
+    <Link to='/Dashboard' className='mr-2'>Dashboard</Link>
+ 
+   </main>
+   </nav>
   )
 }
 
